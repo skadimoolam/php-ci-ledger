@@ -1,0 +1,84 @@
+<div class="container margin-narrow">
+	<form class="form col-md-6 col-sm-6 col-xs-12" novalidate name="newuserform">
+		<h4>Create new User</h4>
+
+		<div class="form-group form-group-label">
+			<div class="row">
+				<div class="col-md-12"><label>Name</label><input class="form-control" type="text" ng-model="registerForm.first_name" required /></div>
+			</div>
+		</div>
+
+		<div class="form-group form-group-label">
+			<div class="row">
+				<div class="col-md-12"><label>Email</label><input class="form-control" type="email" ng-model="registerForm.email" required /></div>
+			</div>
+		</div>
+
+		<div class="form-group form-group-label">
+			<div class="row">
+				<div class="col-md-12"><label>Username</label><input class="form-control" type="text" ng-model="registerForm.username" required /></div>
+			</div>
+		</div>
+
+		<div class="form-group form-group-label">
+			<div class="row">
+				<div class="col-md-12"><label>Password</label><input class="form-control" type="text" ng-model="registerForm.password" required /></div>
+			</div>
+		</div>
+
+		<div class="form-group form-group-label">
+			<div class="row">
+				<div class="col-md-12"><label>Usertype</label>
+					<select class="form-control" ng-model="registerForm.user_type" required>
+						<option value="1">Admin</option>
+						<option value="2">User</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-block btn-brand waves-attach waves-light" ng-disabled="newuserform.$invalid" ng-click="register()">Create User</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<table class="table" name="list all users">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in usersInfo | orderBy:'name':false">
+				<td>{{ user.username }}</td>
+				<td>{{ user.first_name }}</td>
+				<td>{{ user.email }}</td>
+				<td>
+					<button class="btn-sm btn btn-red" ng-click="openDeleteModal('#deleteLoginModal', 'selectedUser', user)">DEL</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div aria-hidden="true" class="modal modal-va-middle fade" id="deleteLoginModal" role="dialog" tabindex="-1">
+  <div class="modal-dialog modal-xs">
+    <div class="modal-content">
+      <div class="modal-heading"><h4>Delete Confirmation</h4></div>
+      <div class="modal-inner">
+        Are you sure you want to delete "{{ selectedUser.username }}" user?
+      </div>
+      <div class="modal-footer" style="margin-bottom: 10px;">
+        <button class="btn btn-flat btn-red" tabindex="-1" data-dismiss="modal">Close</button>
+        <button class="pull-right btn btn-flat btn-brand" data-dismiss="modal" ng-click="deleteUser()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>

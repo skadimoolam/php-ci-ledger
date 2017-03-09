@@ -1,0 +1,30 @@
+<nav class="menu menu-left nav-drawer nav-drawer-md" id="ui_menu">
+	<div class="menu-scroll">
+		<div class="menu-content">
+			<a class="menu-logo">Raj Manager</a>
+			<ul class="nav">
+				<li>
+					<a class="waves-attach link" ui-sref="admin.dashboard">Dashboard</a>
+					<a class="waves-attach link" ui-sref="admin.ledger">Ledger</a>
+					<a class="waves-attach link" ui-sref="admin.passwords">Passwords</a>
+					<a class="waves-attach link" ui-sref="admin.apis">APIs</a>
+					<a class="waves-attach link" ui-sref="admin.addnew">Users</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<header class="header header-brand header-waterfall">
+	<ul class="nav nav-list pull-left hidden-md hidden-lg">
+		<li><a data-toggle="menu" data-target="#ui_menu" href=""><span class="icon icon-lg">menu</span></a></li>
+	</ul>
+	<ul class="nav nav-list pull-right">
+		<li><a ng-click="logout('login')" href=""><i style="margin-right: 10px;" class="icon-lg fa fa-sign-out"></i> Logout</a></li>
+	</ul>
+	<span class="header-logo">{{ stateTitle }}</span>
+</header>
+
+<main class="content">
+	<div ui-view></div>
+</main>

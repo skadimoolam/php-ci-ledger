@@ -1,0 +1,52 @@
+@font-face {
+	font-family: opensanscust;
+	src: url(OpenSans-Regular.ttf);
+}
+@font-face {
+	font-family: robotoslabcust;
+	src: url(RobotoSlab-Regular.ttf);
+}
+@font-face {
+	font-family: robotocust;
+	src: url(Roboto-Regular.ttf);
+}
+
+body, html {
+	font-family: robotocust;
+	-webkit-user-select: none;
+}
+
+.link:hover {
+	cursor: pointer;
+}
+
+.menu-logo:hover {
+	color: #212121;
+	text-decoration: none;
+}
+
+.margin-narrow {
+	padding-top: 16px !important;
+	padding-left: 0px !important;
+	margin-left: 16px !important;
+}
+
+.margin-narrow > .form {
+	padding: 0 !important;
+}
+
+.form-group-label {
+	margin-top: 0px;
+	margin-bottom: 6px;
+}
+
+.btn-sm {
+	height: 24px;
+	line-height: 24px;
+	padding: 1px 8px;
+}
+
+.btn-add {
+	width: 36px;
+	height: 36px;
+}

@@ -1,0 +1,61 @@
+<header class="header header-brand ui-header">
+  <span class="header-logo">Cobra Manager</span>
+</header>
+
+<main class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
+        <section class="content-inner">
+
+          <div class="card">
+            <div class="card-main">
+              <div class="card-header">
+                <div class="card-inner">
+                  <h1 class="card-heading">Login</h1>
+                </div>
+              </div>
+              <div class="card-inner">
+
+                <p class="text-center">
+                  <span class="avatar avatar-inline avatar-lg">
+                    <img alt="Login" src="./libs/material/images/users/avatar-001.jpg">
+                  </span>
+                </p>
+
+                <form class="form" novalidate name="loginform">
+                  <div class="form-group form-group-label">
+                    <div class="row">
+                      <div class="col-md-10 col-md-push-1">
+                        <label class="floating-label">Username</label>
+                        <input class="form-control" type="text" ng-model="loginForm.username" required>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="form-group form-group-label">
+                    <div class="row">
+                      <div class="col-md-10 col-md-push-1">
+                        <label class="floating-label">Password</label>
+                        <input class="form-control" type="password" ng-model="loginForm.password" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-10 col-md-push-1">
+                        <button class="btn btn-block btn-brand waves-attach waves-light" ng-disabled="loginform.$invalid" ng-click="login()">Sign In</button>
+                      </div>
+                    </div>
+
+                    <div class="error-msg">{{ error_msg }}</div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
